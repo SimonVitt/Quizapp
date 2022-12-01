@@ -23,7 +23,7 @@
 
 </head>
 
-<body>
+<body onload="init()">
     <div class="container">
         <div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">
@@ -48,38 +48,44 @@
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title">Wie alt bist du?</h5>
+                        <h5 class="card-title" id="question">Wie alt bist du?</h5>
                         <div class="card widthAnswer">
-                            <div class="card-body">
+                            <div class="card-body answerCard" onclick="answer('answer_1')">
                                 <div class="answer">
                                     <span>A</span>
-                                    <p>Anwort 1</p>
+                                    <p id="answer_1">Anwort 1</p>
                                 </div>
                             </div>
                         </div>
                         <div class="card widthAnswer">
-                            <div class="card-body">
+                            <div class="card-body answerCard" onclick="answer('answer_2')">
                                 <div class="answer">
                                     <span>B</span>
-                                    <p>Anwort 2</p>
+                                    <p id="answer_2">Anwort 2</p>
                                 </div>
                             </div>
                         </div>
                         <div class="card widthAnswer">
-                            <div class="card-body">
+                            <div class="card-body answerCard" onclick="answer('answer_3')">
                                 <div class="answer">
                                     <span>C</span>
-                                    <p>Anwort 3</p>
+                                    <p id="answer_3">Anwort 3</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="card widthAnswer">
+                        <div class="card widthAnswer answerCard" onclick="answer('answer_4')">
                             <div class="card-body">
                                 <div class="answer">
                                     <span>D</span>
-                                    <p>Anwort 4</p>
+                                    <p id="answer_4">Anwort 4</p>
                                 </div>
                             </div>
+                        </div>
+                        <div class="footerCard">
+                            <div>
+                                <span id="currentQuestion" class="currentQuestion">1</span> von <span id="numberQuestions" class="numberQuestions"> 5</span> Fragen
+                            </div>
+                            <button type="button" class="btn btn-primary" disabled id="nextBtn">Nächste Frage</button>
                         </div>
                     </div>
                 </div>
