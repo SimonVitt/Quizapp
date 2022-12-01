@@ -25,12 +25,12 @@ let currentQuestion = 0;
 
 function init(){
     document.getElementById('numberQuestions').innerHTML = contentQuiz.length;
-    document.getElementById('currentQuestion').innerHTML = currentQuestion + 1;
     showQuestion();
 }
 
 function showQuestion(){
     let question = contentQuiz[currentQuestion];
+    document.getElementById('currentQuestion').innerHTML = currentQuestion + 1;
     document.getElementById('question').innerHTML = question['question'];
     document.getElementById('answer_1').innerHTML = question['answers'][0];
     document.getElementById('answer_2').innerHTML = question['answers'][1];
@@ -48,4 +48,22 @@ function answer(selection){
         document.getElementById(idRightAnswer).parentNode.parentNode.classList.add('bg-success')
     }
     document.getElementById('nextBtn').disabled = false;
+}
+
+function nextQuestion(){
+    currentQuestion++;
+    resetAnswerButtons();
+    document.getElementById('nextBtn').disabled = true;
+    showQuestion();
+}
+
+function resetAnswerButtons(){
+    document.getElementById('answer_1').parentNode.parentNode.classList.remove('bg-danger');
+    document.getElementById('answer_1').parentNode.parentNode.classList.remove('bg-success');
+    document.getElementById('answer_2').parentNode.parentNode.classList.remove('bg-danger');
+    document.getElementById('answer_2').parentNode.parentNode.classList.remove('bg-success');
+    document.getElementById('answer_3').parentNode.parentNode.classList.remove('bg-danger');
+    document.getElementById('answer_3').parentNode.parentNode.classList.remove('bg-success');
+    document.getElementById('answer_4').parentNode.parentNode.classList.remove('bg-danger');
+    document.getElementById('answer_4').parentNode.parentNode.classList.remove('bg-success');
 }
