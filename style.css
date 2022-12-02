@@ -5,6 +5,7 @@ body{
 
 .container{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
@@ -20,7 +21,7 @@ body{
 
 .row{
     border-radius: 8px !important;
-    height: 460px !important;
+    height: 500px !important;
 }
 
 .col-md-4{
@@ -73,6 +74,7 @@ body{
     font-weight: 500 !important;
     margin-bottom: 40px !important;
     margin-top: 30px !important;
+    text-align: center !important;
 }
 
 .col-md-8{
@@ -105,7 +107,7 @@ body{
 
 .answer p{
     margin: 0 !important;
-    margin-left: 50px !important;
+    margin-left: 10% !important;
 }
 
 .answerCard:hover{
@@ -192,7 +194,7 @@ body{
     font-family: 'PT Sans', sans-serif !important;
     text-align: center;
     width: 70%;
-    margin-bottom: 20%;
+    margin-bottom: 36%;
 }
 
 .heading h2{
@@ -215,4 +217,66 @@ body{
 
 .progress-bar{
     background-color: rgb(26, 26, 102) !important;
+}
+
+.topperMobile{
+    display: none;
+}
+
+@media(max-width: 576px){
+    .container{
+        width: 100%;
+        padding: 0 !important;
+        min-height: unset;
+    }
+
+    .row{
+        height: 80vh !important;
+    }
+
+    .col-md-4{
+        display: none !important;
+    }
+
+    .col-md-8{
+        width: 100% !important;
+    }
+
+    .imgTrophy{
+        height: 10%;
+        top: 85%;
+    }
+
+    .startBody{
+        justify-content: center;
+    }
+
+    .startBody button {
+        align-self: unset;
+        justify-self: unset;
+        margin: unset;
+    }
+
+    .footerCard{
+        flex-direction: column;
+    }
+
+    .footerCard div{
+        margin-bottom: 14px;
+    }
+
+    .topperMobile{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        width: 100%;
+        background-color: rgb(26, 26, 102);
+    }
+
+    .topperMobile img{
+        margin-top: 0 !important;
+        height: 48px;
+        object-fit: contain;
+    }
 }
