@@ -18,16 +18,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
 
 
 </head>
 
-<body onload="init()">
+<body>
+    <div class="progress">
+        <div id="progressbar" class="progress-bar" role="progressbar" min-width="0" max-width="100" aria-valuenow="0">
+        </div>
+    </div>
     <div class="container">
         <div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">
-                <div class="col-md-4">
+                <div class="col-md-4 height100">
                     <div class="cardLeft">
                         <img src="img/logo.png">
                         <div class="sections">
@@ -46,13 +52,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-8">
-                    <div class="card-body">
+                <div class="col-md-8 height100">
+                    <div class="card-body height100 startBody" id="startBody">
+                        <div class="heading">
+                            <h2>Welcome To The Awesome HTML Quiz</h2>
+                            <p>Ready for the Challange?</p>
+                        </div>
+                        <button class="btn btn-danger" onclick="startQuiz()">START NOW &#10148</button>
+                    </div>
+                    <div class="card-body height100" style="display: none;" id="questionBody">
                         <h5 class="card-title" id="question">Wie alt bist du?</h5>
                         <div class="card widthAnswer">
                             <div class="card-body answerCard" onclick="answer('answer_1')">
                                 <div class="answer">
-                                    <span>A</span>
+                                    <span id="select1">A</span>
                                     <p id="answer_1">Anwort 1</p>
                                 </div>
                             </div>
@@ -60,7 +73,7 @@
                         <div class="card widthAnswer">
                             <div class="card-body answerCard" onclick="answer('answer_2')">
                                 <div class="answer">
-                                    <span>B</span>
+                                    <span id="select2">B</span>
                                     <p id="answer_2">Anwort 2</p>
                                 </div>
                             </div>
@@ -68,25 +81,39 @@
                         <div class="card widthAnswer">
                             <div class="card-body answerCard" onclick="answer('answer_3')">
                                 <div class="answer">
-                                    <span>C</span>
+                                    <span id="select3">C</span>
                                     <p id="answer_3">Anwort 3</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="card widthAnswer answerCard" onclick="answer('answer_4')">
-                            <div class="card-body">
+                        <div class="card widthAnswer" onclick="answer('answer_4')">
+                            <div class="card-body answerCard">
                                 <div class="answer">
-                                    <span>D</span>
+                                    <span id="select4">D</span>
                                     <p id="answer_4">Anwort 4</p>
                                 </div>
                             </div>
                         </div>
                         <div class="footerCard">
                             <div>
-                                <span id="currentQuestion" class="currentQuestion">1</span> von <span id="numberQuestions" class="numberQuestions"> 5</span> Fragen
+                                <span id="currentQuestion" class="currentQuestion">1</span> von <span
+                                    id="numberQuestions" class="numberQuestions"> 5</span> Fragen
                             </div>
-                            <button type="button" class="btn btn-primary" disabled id="nextBtn" onclick="nextQuestion()">Nächste Frage</button>
+                            <button type="button" class="btn btn-primary" disabled id="nextBtn"
+                                onclick="nextQuestion()">Nächste Frage</button>
                         </div>
+                    </div>
+                    <div class="card-body height100 endBody" style="display: none;" id="endBody">
+                        <img src="img/brain result.png" class="imgBrainResult">
+                        <p class="quizname">Complete HTML Quiz</p>
+                        <div class="result">
+                            <span class="spanResult">Your Score</span>
+                            <span class="endScore">
+                                <p id="rightAnswers">XXX</p>/<p id="amountQuestions">XXX</p>
+                            </span>
+                        </div>
+                        <button class="btn btn-light replayBtn" onclick="backToStart()">Replay</button>
+                        <img src="img/tropy.png" class="imgTrophy">
                     </div>
                 </div>
             </div>
