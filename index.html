@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>QuizApp</title>
+    <link rel="icon" type="image" href="img/brain result.png">
 
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
@@ -26,11 +27,16 @@
 </head>
 
 <body>
-    <div class="progress">
+    <div class="progress hideSmall">
         <div id="progressbar" class="progress-bar" role="progressbar" min-width="0" max-width="100" aria-valuenow="0">
         </div>
     </div>
     <div class="container">
+        <div class="progress hideBig">
+            <div id="progressbar2" class="progress-bar" role="progressbar" min-width="0" max-width="100"
+                aria-valuenow="0">
+            </div>
+        </div>
         <div class="topperMobile">
             <img src="img/logo.png">
         </div>
@@ -64,36 +70,38 @@
                         <button class="btn btn-danger" onclick="startQuiz()">START NOW &#10148</button>
                     </div>
                     <div class="card-body height100" style="display: none;" id="questionBody">
-                        <h5 class="card-title" id="question">Wie alt bist du?</h5>
-                        <div class="card widthAnswer">
-                            <div class="card-body answerCard" onclick="answer('answer_1')">
-                                <div class="answer">
-                                    <span id="select1">A</span>
-                                    <p id="answer_1">Anwort 1</p>
+                        <h5 class="card-title" id="question">Frage</h5>
+                        <div class="answersBody">
+                            <div class="card widthAnswer">
+                                <div class="card-body answerCard" onclick="answer('answer_1')">
+                                    <div class="answer">
+                                        <span id="select1">A</span>
+                                        <p id="answer_1">Anwort 1</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card widthAnswer">
-                            <div class="card-body answerCard" onclick="answer('answer_2')">
-                                <div class="answer">
-                                    <span id="select2">B</span>
-                                    <p id="answer_2">Anwort 2</p>
+                            <div class="card widthAnswer">
+                                <div class="card-body answerCard" onclick="answer('answer_2')">
+                                    <div class="answer">
+                                        <span id="select2">B</span>
+                                        <p id="answer_2">Anwort 2</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card widthAnswer">
-                            <div class="card-body answerCard" onclick="answer('answer_3')">
-                                <div class="answer">
-                                    <span id="select3">C</span>
-                                    <p id="answer_3">Anwort 3</p>
+                            <div class="card widthAnswer">
+                                <div class="card-body answerCard" onclick="answer('answer_3')">
+                                    <div class="answer">
+                                        <span id="select3">C</span>
+                                        <p id="answer_3">Anwort 3</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card widthAnswer" onclick="answer('answer_4')">
-                            <div class="card-body answerCard">
-                                <div class="answer">
-                                    <span id="select4">D</span>
-                                    <p id="answer_4">Anwort 4</p>
+                            <div class="card widthAnswer" onclick="answer('answer_4')">
+                                <div class="card-body answerCard">
+                                    <div class="answer">
+                                        <span id="select4">D</span>
+                                        <p id="answer_4">Anwort 4</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

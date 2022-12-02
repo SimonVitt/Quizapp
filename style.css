@@ -8,7 +8,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 97vh !important;
     background-color:rgb(255, 233, 205);
 }
 
@@ -21,7 +21,7 @@ body{
 
 .row{
     border-radius: 8px !important;
-    height: 500px !important;
+    height: 610px !important;
 }
 
 .col-md-4{
@@ -71,6 +71,7 @@ body{
 }
 
 .card-title{
+    height: 10vh;
     font-weight: 500 !important;
     margin-bottom: 40px !important;
     margin-top: 30px !important;
@@ -188,6 +189,10 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
+    background-image: url('img/brainbg.jpg');
+    object-fit: contain;
+    background-size: cover;
+    background-position: center;
 }
 
 .heading{
@@ -205,6 +210,14 @@ body{
     font-size: 24px;
 }
 
+.answersBody{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50vh;
+    width: 100%;
+}
+
 .startBody button{
     align-self: flex-end;
     justify-self: flex-end;
@@ -212,6 +225,7 @@ body{
 }
 
 .progress{
+    width: 100% !important;
     --bs-progress-border-radius: 0 !important;
 }
 
@@ -223,11 +237,16 @@ body{
     display: none;
 }
 
+.hideBig{
+    display: none !important;
+}
+
 @media(max-width: 576px){
     .container{
         width: 100%;
         padding: 0 !important;
         min-height: unset;
+
     }
 
     .row{
@@ -240,6 +259,7 @@ body{
 
     .col-md-8{
         width: 100% !important;
+        height: 86vh !important;
     }
 
     .imgTrophy{
@@ -261,6 +281,10 @@ body{
         flex-direction: column;
     }
 
+    .imgBrainResult{
+        margin-top: 12vh !important;
+    }
+
     .footerCard div{
         margin-bottom: 14px;
     }
@@ -278,5 +302,13 @@ body{
         margin-top: 0 !important;
         height: 48px;
         object-fit: contain;
+    }
+
+    .hideBig{
+        display: unset !important;
+    }
+
+    .hideSmall{
+        display: none !important;
     }
 }

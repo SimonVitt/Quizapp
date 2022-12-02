@@ -110,6 +110,8 @@ function updateProgressbar(){
     let progressPercent = Math.round(((currentQuestion ) / contentQuiz.length) *100);
     document.getElementById('progressbar').style = `width: ${progressPercent}%;`;
     document.getElementById('progressbar').innerHTML = `${progressPercent}%`;
+    document.getElementById('progressbar2').style = `width: ${progressPercent}%;`;
+    document.getElementById('progressbar2').innerHTML = `${progressPercent}%`;
 }
 
 function resetAnswerButtons() {
